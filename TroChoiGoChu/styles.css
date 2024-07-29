@@ -1,0 +1,89 @@
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 center;
+    padding: 0;
+}
+
+.container {
+    padding-top: auto;
+    position: relative;
+}
+
+.card {
+    background-color: #dfdfdf;
+    border-radius: 15px;
+    width: 600px;
+    height: 600px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-title {
+    font-weight: 800;
+    font-style: bold;
+    font-size: 50px;
+}
+
+.input-field {
+    margin-top: 20px;
+}
+
+#word-container {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#score, #wpm, #timer {
+    margin-top: 20px;
+}
+
+#input {
+    padding: 10px;
+    font-size: 18px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+md-filled-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    --md-filled-button-container-shape: 5px;
+    --md-sys-color-primary: #000000;
+    --md-sys-color-on-primary: #FFFFFF;
+}
+
+.neon {
+    background-image: url("assets/images/neon.jpg");
+    background-size: cover;
+    color: rgb(136, 40, 112);
+}
+
+.space {
+    background-image: url("assets/images/space.jpg");
+    background-size: cover;
+    color: rgb(12, 8, 241);
+}
+
+.aero {
+    background-image: url("assets/images/aero.jpg");
+    background-size: cover;
+    color: #2c2c2c;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#word {
+    animation: blink 1s infinite;
+}
