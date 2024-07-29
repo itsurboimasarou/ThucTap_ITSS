@@ -6,7 +6,7 @@ let score = 0;
 let correctWords = 0;
 let timeLimit = 30;
 let timer;
-let theme = 'neon';
+let theme = 'none';
 let startTime;
 
 document.getElementById('start-btn').addEventListener('click', startGame);
