@@ -8,7 +8,6 @@ let timeLimit = 30;
 let timer;
 let theme = 'neon';
 let startTime;
-let backgroundMusic;
 
 document.getElementById('start-btn').addEventListener('click', startGame);
 document.getElementById('reset-btn').addEventListener('click', resetGame);
