@@ -49,6 +49,7 @@ function startTimer() {
         } else {
             clearInterval(timer);
             alert(`Time's up! Your score is ${score}`);
+            playTimeUpSound();
         }
     }, 1000);
 }
@@ -93,7 +94,12 @@ function changeTime() {
 }
 
 function playSound(type) {
-    const audio = new Audio(`${type}.mp3`);
+    const audio = new Audio(`./assets/audio/${type}.mp3`);
+    audio.play();
+}
+
+function playTimeUpSound() {
+    const audio = new Audio('timeup.mp3');
     audio.play();
 }
 
