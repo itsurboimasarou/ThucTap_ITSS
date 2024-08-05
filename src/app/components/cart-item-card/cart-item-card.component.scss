@@ -1,0 +1,59 @@
+/* src/app/components/cart-item-card/cart-item-card.component.scss */
+.cart-item-card {
+  font-family: SDK_VN_Web, Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.cart-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.cart-item-card h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.cart-item-card p {
+  margin: 6px 0;
+  color: #666;
+}
+
+.cart-item-card p:last-child {
+  font-weight: bold;
+  color: #000;
+}
+
+.cart-item-card button {
+  margin-left: auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff4d4d;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cart-item-card button:hover {
+  background-color: #ff1a1a;
+}

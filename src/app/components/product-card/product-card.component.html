@@ -1,0 +1,24 @@
+<div id="product-card">
+  <img [src]="this.product.image" alt="Product Image" id="image" />
+  <h2 id="pName">{{ this.product.pName }}</h2>
+  <p id="description">{{ this.product.description }}</p>
+  <p id="price">{{ this.product.price }}</p>
+  <p id="quantity">{{ this.product.quantity }}</p>
+  <p id="inStock">{{ this.product.inStock }}</p>
+  <button
+    (click)="
+      storeService.addToCart({
+        id: this.product.id,
+        pName: this.product.pName,
+        price: this.product.price,
+        image: this.product.image,
+        description: this.product.description,
+        quantity: this.product.quantity,
+        inStock: this.product.inStock,
+      })
+    "
+    id="add-to-cart-button"
+  >
+    Add to Cart
+  </button>
+</div>
