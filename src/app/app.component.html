@@ -1,16 +1,1 @@
-<div class="container-counter">
-  <button id="outButton" (click)="decrease()">-</button>
-  <p>Number: {{count$ | async}}</p>
-  <button id="inButton" (click)="increase()">+</button>
-</div>
-
-<form id="box-counter">
-  <label for="fname">Hãy nhập một con số:</label><br>
-  <input type="text" id="fname" name="fname" (keyup)="setCount($event)"><br>
-</form>
-
-<p>Current Date and Time: {{time$ | async | date: 'medium'}}</p>
-<button (click)="launch()">Launch</button>
-<button (click)="cupA()">Make Coffee</button>
-
 <app-calculator></app-calculator>

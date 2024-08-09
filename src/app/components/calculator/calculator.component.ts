@@ -13,6 +13,7 @@ export class CalculatorComponent {
   firstOperand: number | null = null;
   secondOperand: number | null = null;
   currentOperation: string | null = null;
+  currentOperationSign: string | null = null;
 
   appendNumber(number: string) {
     if (this.displayValue === '0') {
@@ -31,12 +32,12 @@ export class CalculatorComponent {
       this.compute();
     }
     this.currentOperation = operation;
+    this.currentOperationSign = operation;
     this.displayValue = '';
   }
 
   compute() {
     if (this.firstOperand === null || this.currentOperation === null || this.displayValue === '') return;
-    // this.firstOperand = parseFloat(this.displayValue);
     this.secondOperand = parseFloat(this.displayValue);
     let result: number;
     switch (this.currentOperation) {
@@ -55,9 +56,10 @@ export class CalculatorComponent {
       default:
         return;
     }
-    this.displayValue = result.toString();
+    this.displayValue = this.limitDecimalPlaces(result, 10).toString();
     this.firstOperand = result;
     this.currentOperation = null;
+    this.currentOperationSign = null;
   }
 
   clear() {
@@ -65,12 +67,19 @@ export class CalculatorComponent {
     this.firstOperand = null;
     this.secondOperand = null;
     this.currentOperation = null;
+    this.currentOperationSign = null;
   }
+
   delete() {
     if (this.displayValue.length === 1) {
       this.displayValue = '0';
     } else {
       this.displayValue = this.displayValue.slice(0, -1);
     }
+  }
+
+  limitDecimalPlaces(value: number, places: number): number {
+    const factor = Math.pow(10, places);
+    return Math.round(value * factor) / factor;
   }
 }

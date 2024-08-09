@@ -22,47 +22,47 @@ import {CalculatorComponent} from "./components/calculator/calculator.component"
 })
 export class AppComponent {
   title = 'store3';
-  count$!: Observable<number>;
-  time$!: Observable<Date>;
-
-  constructor(private store: Store<{
-    counter: CounterState,
-    timer: TimeState
-  }>, private rocketService:RocketService, private makeCoffeeService: MakeCoffeeService) {
-    this.count$ = this.store.select("counter", "count");
-    this.time$ = this.store.select("timer", "time");
-    setInterval(() => {
-      this.getTime();
-    }, 1000);
-  }
-
-  public increase() {
-    this.store.dispatch(CountActions.increase());
-  }
-
-  public decrease() {
-    this.store.dispatch(CountActions.decrease());
-  }
-
-  public setCount(event: KeyboardEvent) {
-    if (event.key === 'Enter') {
-      const inputElement = event.target as HTMLInputElement;
-      const parsedCount = parseInt(inputElement.value, 10);
-      if (!isNaN(parsedCount)) {
-        this.store.dispatch(CountActions.setCount(parsedCount));
-      }
-    }
-  }
-
-  getTime() {
-    this.store.dispatch(TimeActions.getTime());
-  }
-
-  public async launch() {
-    await this.rocketService.planA();
-  }
-
-  public async cupA() {
-    await this.makeCoffeeService.cupA();
-  }
+  // count$!: Observable<number>;
+  // time$!: Observable<Date>;
+  //
+  // constructor(private store: Store<{
+  //   counter: CounterState,
+  //   timer: TimeState
+  // }>, private rocketService:RocketService, private makeCoffeeService: MakeCoffeeService) {
+  //   this.count$ = this.store.select("counter", "count");
+  //   this.time$ = this.store.select("timer", "time");
+  //   setInterval(() => {
+  //     this.getTime();
+  //   }, 1000);
+  // }
+  //
+  // public increase() {
+  //   this.store.dispatch(CountActions.increase());
+  // }
+  //
+  // public decrease() {
+  //   this.store.dispatch(CountActions.decrease());
+  // }
+  //
+  // public setCount(event: KeyboardEvent) {
+  //   if (event.key === 'Enter') {
+  //     const inputElement = event.target as HTMLInputElement;
+  //     const parsedCount = parseInt(inputElement.value, 10);
+  //     if (!isNaN(parsedCount)) {
+  //       this.store.dispatch(CountActions.setCount(parsedCount));
+  //     }
+  //   }
+  // }
+  //
+  // getTime() {
+  //   this.store.dispatch(TimeActions.getTime());
+  // }
+  //
+  // public async launch() {
+  //   await this.rocketService.planA();
+  // }
+  //
+  // public async cupA() {
+  //   await this.makeCoffeeService.cupA();
+  // }
 }
